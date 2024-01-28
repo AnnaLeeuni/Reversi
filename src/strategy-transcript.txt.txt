@@ -1,0 +1,161 @@
+In this version we lie about the legal move that all moves are legal.
+
+visit position: x: 0, y: 0
+visit position: x: 0, y: 1
+visit position: x: 0, y: 2
+visit position: x: 0, y: 3
+visit position: x: 0, y: 4
+visit position: x: 0, y: 5
+visit position: x: 0, y: 6
+visit position: x: 0, y: 7
+visit position: x: 0, y: 8
+visit position: x: 0, y: 9
+visit position: x: 0, y: 10
+visit position: x: 1, y: 0
+visit position: x: 1, y: 1
+visit position: x: 1, y: 2
+visit position: x: 1, y: 3
+visit position: x: 1, y: 4
+visit position: x: 1, y: 5
+visit position: x: 1, y: 6
+visit position: x: 1, y: 7
+visit position: x: 1, y: 8
+visit position: x: 1, y: 9
+visit position: x: 1, y: 10
+visit position: x: 2, y: 0
+visit position: x: 2, y: 1
+visit position: x: 2, y: 2
+visit position: x: 2, y: 3
+visit position: x: 2, y: 4
+visit position: x: 2, y: 5
+visit position: x: 2, y: 6
+visit position: x: 2, y: 7
+visit position: x: 2, y: 8
+visit position: x: 2, y: 9
+visit position: x: 2, y: 10
+visit position: x: 3, y: 0
+visit position: x: 3, y: 1
+visit position: x: 3, y: 2
+visit position: x: 3, y: 3
+visit position: x: 3, y: 4
+visit position: x: 3, y: 5
+visit position: x: 3, y: 6
+visit position: x: 3, y: 7
+visit position: x: 3, y: 8
+visit position: x: 3, y: 9
+visit position: x: 3, y: 10
+visit position: x: 4, y: 0
+visit position: x: 4, y: 1
+visit position: x: 4, y: 2
+visit position: x: 4, y: 3
+visit position: x: 4, y: 4
+visit position: x: 4, y: 5
+visit position: x: 4, y: 6
+visit position: x: 4, y: 7
+visit position: x: 4, y: 8
+visit position: x: 4, y: 9
+visit position: x: 4, y: 10
+visit position: x: 5, y: 0
+visit position: x: 5, y: 1
+visit position: x: 5, y: 2
+visit position: x: 5, y: 3
+visit position: x: 5, y: 4
+visit position: x: 5, y: 5
+visit position: x: 5, y: 6
+visit position: x: 5, y: 7
+visit position: x: 5, y: 8
+visit position: x: 5, y: 9
+visit position: x: 5, y: 10
+visit position: x: 6, y: 0
+visit position: x: 6, y: 1
+visit position: x: 6, y: 2
+visit position: x: 6, y: 3
+visit position: x: 6, y: 4
+visit position: x: 6, y: 5
+visit position: x: 6, y: 6
+visit position: x: 6, y: 7
+visit position: x: 6, y: 8
+visit position: x: 6, y: 9
+visit position: x: 6, y: 10
+visit position: x: 7, y: 0
+visit position: x: 7, y: 1
+visit position: x: 7, y: 2
+visit position: x: 7, y: 3
+visit position: x: 7, y: 4
+visit position: x: 7, y: 5
+visit position: x: 7, y: 6
+visit position: x: 7, y: 7
+visit position: x: 7, y: 8
+visit position: x: 7, y: 9
+visit position: x: 7, y: 10
+visit position: x: 8, y: 0
+visit position: x: 8, y: 1
+visit position: x: 8, y: 2
+visit position: x: 8, y: 3
+visit position: x: 8, y: 4
+visit position: x: 8, y: 5
+visit position: x: 8, y: 6
+visit position: x: 8, y: 7
+visit position: x: 8, y: 8
+visit position: x: 8, y: 9
+visit position: x: 8, y: 10
+visit position: x: 9, y: 0
+visit position: x: 9, y: 1
+visit position: x: 9, y: 2
+visit position: x: 9, y: 3
+visit position: x: 9, y: 4
+visit position: x: 9, y: 5
+visit position: x: 9, y: 6
+visit position: x: 9, y: 7
+visit position: x: 9, y: 8
+visit position: x: 9, y: 9
+visit position: x: 9, y: 10
+visit position: x: 10, y: 0
+visit position: x: 10, y: 1
+visit position: x: 10, y: 2
+visit position: x: 10, y: 3
+visit position: x: 10, y: 4
+visit position: x: 10, y: 5
+visit position: x: 10, y: 6
+visit position: x: 10, y: 7
+visit position: x: 10, y: 8
+visit position: x: 10, y: 9
+visit position: x: 10, y: 10
+
+This is the transcript for the AIGetCorner, 
+it should check the six corners.
+     _ _ _ _ _ _
+    _ _ _ _ _ _ _
+   _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _ _
+ _ _ _ _ o x _ _ _ _
+_ _ _ _ x _ o _ _ _ _
+ _ _ _ _ o x _ _ _ _
+  _ _ _ _ _ _ _ _ _
+   _ _ _ _ _ _ _ _
+    _ _ _ _ _ _ _
+     _ _ _ _ _ _
+
+visit position: x: 0, y: 0
+visit position: x: 0, y: 5
+visit position: x: 5, y: 0
+visit position: x: 5, y: 10
+visit position: x: 10, y: 0
+visit position: x: 10, y: 5
+
+In this transrcipt, we lied to the strategy that there's only one
+legal move.
+     _ _ _ _ _ _
+    _ _ _ _ _ _ _
+   _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _ _
+ _ _ _ _ o x _ _ _ _
+_ _ _ _ x _ o _ _ _ _
+ _ _ _ _ o x _ _ _ _
+  _ _ _ _ _ _ _ _ _
+   _ _ _ _ _ _ _ _
+    _ _ _ _ _ _ _
+     _ _ _ _ _ _
+
+visit position: x: 3, y: 4
+

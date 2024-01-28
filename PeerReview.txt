@@ -1,0 +1,82 @@
+PeerReview:
+
+our provider 's view takes in a class instead of interface in their view.
+Because they didn't send us the implementation of that class，we are able to simply name our adopter
+the same as their model used in the view.
+
+Provider's view did not constrain the player type, both black and white can place
+on the same view, which is a major design flaw that should be corrected.
+
+Further, provider's game is played by clicking once any cell you wish to place because we noticed
+they called controller to action in the "mouseClick". Instead, they should implement
+that as click to highlight the cell then click a key to confirm the cell to place.
+
+we are unable to repaint their view outside their gameframe class,
+because Jpanel in their gameFrame is private and they neither got any getter methods for it
+nor overwrite the repaint method. so we asked our providers to add
+getter methods in their gameFrame. But we are not sure if they included that in the version they
+submit to handin.
+
+1.  Interface Usage and Method Visibility:
+    Critique: The usage of specific classes like "HexTile" instead of interfaces can limit
+    the extensibility of the code. Provider's choice to use a concrete class
+    (GamePanel) instead of an interface for the view component restricts flexibility as well.
+    Additionally, the lack of access modifiers in front of interface methods suggests that they are
+    package-private, which restricts their visibility outside the package.
+
+    Suggestion: Refactor HexTile and similar classes to interfaces, define a view interface that
+    outlines essential methods for interaction, explicitly define the visibility of methods
+    in interfaces (e.g., public) to enhance accessibility and clarity.
+
+2. Strategy with Readonly Model:
+   Critique: The strategy implementation currently does not utilize a readonly model,
+   allowing strategies to modify the model directly.
+
+
+3. Interface Method Inclusion:
+   Critique: Some essential methods in classes are not declared in their respective interfaces,
+   for example: countFlippedDiscs was used in strategy, but was not included in model interface.
+
+
+4. Event Listener in View Constructor:
+   Critique: The inclusion of an event listener as a parameter in the view's constructor
+   might not be an optimal design choice, as it tightly couples the view with
+   specific event handling logic.
+
+   Suggestion: Decouple the event handling from the view's constructor.
+   Implement a more flexible event handling mechanism, possibly using the Observer pattern,
+   where the view can subscribe to listen to model changes or user interactions without
+   being directly dependent on a specific event listener implementation.
+
+5. View presentation:
+   Critique: There are several issues with view presentation.
+   a) The indentation of cells are wrong, because there is a flawed board arrangement model.
+   b) The clicking operation was designed wrong and not inline with the instruction,
+   instead of moving by a key event after a selected/highlighted cell, the player can move by simply
+   clicking once on a cell, which is not correct.
+   c) The players should also not be able to click any cell that's already placed with cell.
+   d) The provider code also did not handle exception for invalid move. They should instead pops up
+   an error message window in as another frame as a visual presentation on the board, not just an
+   exception thrown in the console.
+
+6. Missing Interface for players and controller:
+   The provider code does not have player interface and classes, as well as for controller.
+   Critique: This design flaw will overcomplicate the of controller, and more coupling.
+   Expanding the game to include features like multiplayer modes, AI with varying difficulty levels,
+   or different player strategies becomes more challenging.
+   Each new feature might require substantial changes to the core model, rather than simply
+   adding new implementations of a Player interface.
+
+7. Limited Access to JPanel for Repainting:
+   Critique: The provider's GameFrame encapsulates the JPanel (GamePanel) without exposing it
+   or providing a method to repaint it. This design limits the control other developers have
+   over the view, making it challenging to refresh or update the UI in response to model
+   changes or user interactions from outside the GameFrame.
+   Suggestion: Recommend adding a public method in GameFrame that delegates to GamePanel's
+   repaint method. Alternatively, providing a getter for GamePanel would allow external classes
+   to directly invoke its public methods, including repaint(). However, this approach should be
+   carefully considered as it could violate encapsulation principles.
+
+7. Lack proper javaDoc:
+   The provider code need more comments and javaDoc in several public method.
+   The missing comments make it hard for outsider to review, understand and extend on current code.

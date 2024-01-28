@@ -1,0 +1,23 @@
+Initially we were shocked by the provider's view that we received which was completely different
+from the requirements. Their view just looks like a square board plus a triangle board under it.
+But we read through the design of their implementation of view and found it was quite clear and
+impossible to incorporate it wit our view in our game.
+
+Still, there are many design issues with the code they sent to us. Most of the class for example,
+gameFrame didn't take in an interface of their model, which makes it extremely difficult for future
+extension.
+
+Some of the public methods in provider's code are inside the class rather than interface. We also
+noticed that we had similar issues in our code. Those are the things we think we can do better
+next time. That we should be more careful with the design of our public methods.
+
+We also have some trust issues. Because their view was so buggy, we began to wondering if the rest of
+the code they sent to us were still as broken as their view. Therefore, when's exception been thrown,
+their implementation was the first thing we went through. But those other stuff turns out to be
+fine.
+
+Despite the code, Our providers are nice person. Every times we ask for clarification, they
+responded in time and with details. We thought it was very helpful.
+
+
+
